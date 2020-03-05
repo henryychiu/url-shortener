@@ -1,0 +1,13 @@
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $m-size;
+}
+
+.header__title {
+  color: $grey;
+  font-size: $font-size-large;
+  text-decoration: none;
+  margin: 0;
+}

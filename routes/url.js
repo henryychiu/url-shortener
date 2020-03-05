@@ -6,6 +6,21 @@ const keys = require('../config/keys');
 
 const Url = require('../models/Url');
 
+// @route     GET /api/url/list
+// @desc      Return full list of records
+router.get('/list', async (req, res) => {
+  const urls = await Url.find({})
+  res.send(urls);
+});
+
+// @route     POST /api/url/remove
+// @desc      Remove record
+router.post('/remove', async (req, res) => {
+  const { longUrl } = req.body;
+  await Url.deleteOne({ longUrl });
+  res.send();
+});
+
 // @route     POST /api/url/shorten
 // @desc      Create short URL
 router.post('/shorten', async (req, res) => {
@@ -34,11 +49,11 @@ router.post('/shorten', async (req, res) => {
           urlCode,
           longUrl,
           shortUrl,
-          date: new Date()
+          createdAt: new Date(),
+          clicks: '0'
         });
 
         await url.save();
-
         res.json(url);
       }
     } catch (error) {

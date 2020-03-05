@@ -1,0 +1,21 @@
+.text-input {
+  border: none;
+  border-radius: 2px;
+  font-size: $font-size-large;
+  font-weight: 300;
+  height: 42px;
+  margin-right: $m-size;
+  outline: none;
+  padding: $s-size;
+  width: 100%;
+}
+
+.select {
+  @extend .text-input;
+}
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+  resize: none;
+}

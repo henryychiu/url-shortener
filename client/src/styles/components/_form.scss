@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__error {
+  margin: 0 0 $m-size 0;
+  font-style: italic;
+}

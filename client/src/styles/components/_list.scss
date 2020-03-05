@@ -1,0 +1,138 @@
+.list-header {
+  background: $off-white;
+  border: 1px solid darken($off-white, 7%);
+  color: $grey;
+  display: flex;
+  font-size: $font-size-small;
+  justify-content: space-between;
+  padding: $s-size $m-size;
+}
+
+.list-body {
+  margin-bottom: $l-size;
+}
+
+.list-item {
+  align-items: center;
+  border: 1px solid darken($off-white, 7%);
+  color: $dark-grey;
+  display: flex;
+  border-top: none;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: $m-size;
+  text-decoration: none;
+  &:hover {
+    background: $off-white;
+    .list-item__text-input {
+      background: $off-white;
+    }
+    .list-item__copy-button {
+      display: inline;
+    }
+    .list-item__remove-button {
+      display: inline;
+    }
+  }
+}
+
+.list-item--message {
+  align-items: center;
+  color: $grey;
+  justify-content: center;
+  padding: $s-size;
+  &:hover {
+    background: none;
+  }
+}
+
+.list-item__text {
+  color: $grey;
+  font-size: $font-size-small;
+  padding-right: $m-size;
+}
+
+.list-item__text-container {
+  display: flex;
+}
+
+.list-item__statistic {
+  color: $grey;
+  font-size: $font-size-small;
+  text-align: center;
+}
+
+.list-item__link {
+  color: $blue;
+  font-size: $font-size-small;
+  padding-right: $m-size;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.list-item__button-container {
+  position: relative;
+  line-height: 1;
+}
+
+.list-item__copy-button {
+  background: $off-white;
+  border: none;
+  display: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  &:hover 
+  + .list-item__copy-message {
+    visibility: visible;
+    opacity: 1;    
+  }
+}
+
+.list-item__copy-message {
+  text-align: center;
+  position: absolute;
+  top: 2.6rem;
+  left: -4.5rem;
+  background: $grey;
+  border: none;
+  border-radius: 2px;
+  color: $off-white;
+  opacity: 0;
+  font-size: $font-size-small;
+  font-weight: 300;
+  padding: $xs-size;
+  transition: opacity .3s ease;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.list-item__copy-message-2 {
+  @extend .list-item__copy-message;
+  left: -2.2rem;
+}
+
+.list-item__remove-button {
+  background: $off-white;
+  border: none;
+  display: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  &:hover 
+  + .list-item__remove-message {
+    visibility: visible;
+    opacity: 1; 
+  }
+}
+
+.list-item__remove-message {
+  @extend .list-item__copy-message;
+  left: -1.7rem;
+}

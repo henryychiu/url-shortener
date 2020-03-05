@@ -8,7 +8,9 @@ const Url = require('../models/Url');
 router.get('/:code', async (req, res) => {
   try {
     const url = await Url.findOne({ urlCode: req.params.code });
-
+    const newClicks = (parseInt(url.clicks) + 1).toString();
+    await Url.findOneAndUpdate({ urlCode: req.params.code }, { clicks: newClicks });
+    
     if (url) {
       return res.redirect(url.longUrl);
     } else {
