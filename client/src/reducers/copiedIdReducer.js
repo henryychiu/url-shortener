@@ -1,4 +1,4 @@
-// URLs Reducer
+// Copied ID Reducer
 
 export default function (state = '', action) {
   switch (action.type) {

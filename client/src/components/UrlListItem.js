@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import moment from 'moment';
-import { startSetUrls } from '../actions/urls';
+import { setUrls } from '../actions/urls';
 import { setCopiedId } from '../actions/copiedId'; 
 
-const UrlListItem = ({ _id, longUrl, shortUrl, createdAt, clicks, copiedId, setCopiedId, startSetUrls }) => { 
+const UrlListItem = ({ _id, longUrl, shortUrl, createdAt, clicks, copiedId, auth, setCopiedId, setUrls }) => { 
   const id = _id;
 
   const copyUrl = () => {
@@ -21,9 +21,10 @@ const UrlListItem = ({ _id, longUrl, shortUrl, createdAt, clicks, copiedId, setC
 
   const removeItem = async () => {
     await axios.post('/api/url/remove', {
-      longUrl
+      longUrl,
+      auth
     });
-    startSetUrls();
+    setUrls();
   }
 
   return (
@@ -69,11 +70,12 @@ const UrlListItem = ({ _id, longUrl, shortUrl, createdAt, clicks, copiedId, setC
 };
 
 const mapStateToProps = (state) => ({
-  copiedId: state.copiedId
+  copiedId: state.copiedId,
+  auth: state.auth
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  startSetUrls: () => dispatch(startSetUrls()),
+  setUrls: () => dispatch(setUrls()),
   setCopiedId: (copiedId) => dispatch(setCopiedId(copiedId))
 });
 

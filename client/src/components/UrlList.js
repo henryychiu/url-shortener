@@ -13,14 +13,20 @@ const UrlList = (props) => (
     </div>
     <div className="list-body">
       {
-        props.urls.length === 0 ? (
+        props.auth === false ? (
           <div className="list-item list-item--message">
-            <span>No URLs</span>
+            <span>Log in to track your URLs</span>
           </div>
         ) : (
-          props.urls.map((url) => {
-            return <UrlListItem key={url._id} {...url} />;
-          })   
+          props.urls.length === 0 ? (
+            <div className="list-item list-item--message">
+              <span>No URLs</span>
+            </div>
+          ) : (
+            props.urls.map((url) => {
+              return <UrlListItem key={url._id} {...url} />;
+            })
+          )
         )
       }
     </div>
@@ -28,7 +34,8 @@ const UrlList = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-  urls: state.urls
+  urls: state.urls,
+  auth: state.auth
 });
 
 export default connect(mapStateToProps)(UrlList);

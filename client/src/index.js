@@ -7,7 +7,8 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import App from './components/App';
 import reducers from './reducers';
-import { startSetUrls } from './actions/urls';
+import { setUrls } from './actions/urls';
+import { fetchUser } from './actions/auth';
 import LoadingPage from './components/LoadingPage';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; 
@@ -29,7 +30,8 @@ const renderApp = () => {
 ReactDOM.render(<LoadingPage />, document.querySelector('#root'));
 
 const start = async () => {
-  await store.dispatch(startSetUrls());
+  await store.dispatch(fetchUser());
+  await store.dispatch(setUrls());
   renderApp();
 };
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import ShortenerModal from './ShortenerModal';
-import { startSetUrls } from '../actions/urls';
+import { setUrls } from '../actions/urls';
 import { removeCopiedId } from '../actions/copiedId';
 
 class ShortenerForm extends Component {
@@ -21,13 +21,14 @@ class ShortenerForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.post('/api/url/shorten', {
-      longUrl: this.state.longUrl
+      longUrl: this.state.longUrl,
+      auth: this.props.auth 
     })
     const shortUrl = res.data.shortUrl;
     this.setState(() => ({ shortUrl }));
     this.setState(() => ({ modalIsOpen: true }));
     this.setState(() => ({ copied: false }));
-    this.props.startSetUrls();
+    this.props.setUrls();
   };
 
   closeModal = () => {
@@ -80,9 +81,13 @@ class ShortenerForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
 const mapDispatchToProps = (dispatch) => ({
-  startSetUrls: () => dispatch(startSetUrls()),
+  setUrls: () => dispatch(setUrls()),
   removeCopiedId: () => dispatch(removeCopiedId())
 });
 
-export default connect(null, mapDispatchToProps)(ShortenerForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ShortenerForm);

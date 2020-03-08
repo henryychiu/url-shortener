@@ -1,15 +1,13 @@
 import axios from 'axios';
 
 // SET_URLS
-export const setUrls = (urls) => ({
-  type: 'SET_URLS',
-  urls
-});
-
-export const startSetUrls = () => {
-  return async (dispatch) => {
-    const res = await axios.get('/api/url/list');
+export const setUrls = () => {
+  return async (dispatch, getState) => {
+    const auth = getState().auth;
+    const res = await axios.post('/api/url/list', {
+      auth
+    });
     const urls = res.data.reverse();
-    dispatch(setUrls(urls));
+    dispatch({ type: 'SET_URLS', urls });
   };
 };

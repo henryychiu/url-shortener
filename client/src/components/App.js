@@ -11,8 +11,8 @@ class App extends Component {
         <ShortenerForm />
         <UrlList />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default App;
