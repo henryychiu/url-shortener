@@ -21,9 +21,12 @@
   background: white;
   box-shadow: 0px 5px 10px $grey;
   color: $dark-grey;
-  max-width: 45rem;
+  max-width: 30rem;
   outline: none;
   padding: $m-size;
+  @media (min-width: $desktop-breakpoint) {
+  max-width: 45rem;
+  }
 }
 
 .modal__title {
@@ -63,7 +66,10 @@
   font-size: $font-size-medium;
   font-weight: 300;
   outline: none;
+  overflow: hidden;
   padding: $s-size;
+  text-overflow: ellipsis;
+  text-decoration: none;
 }
 
 .modal__copy-container {

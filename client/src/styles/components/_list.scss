@@ -13,14 +13,12 @@
 }
 
 .list-item {
-  align-items: center;
   border: 1px solid darken($off-white, 7%);
   color: $dark-grey;
   display: flex;
   border-top: none;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: $m-size;
+  flex-direction: column;
+  padding: $s-size;
   text-decoration: none;
   &:hover {
     background: $off-white;
@@ -33,6 +31,12 @@
     .list-item__remove-button {
       display: inline;
     }
+  }
+  @media (min-width: $desktop-breakpoint) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $m-size;
   }
 }
 
@@ -59,7 +63,9 @@
 .list-item__statistic {
   color: $grey;
   font-size: $font-size-small;
-  text-align: center;
+  @media (min-width: $desktop-breakpoint) {
+    text-align: center;
+  }
 }
 
 .list-item__link {
@@ -124,7 +130,6 @@
   outline: none;
   padding: 0;
   text-decoration: none;
-  text-align: center;
   &:hover 
   + .list-item__remove-message {
     visibility: visible;
@@ -135,4 +140,34 @@
 .list-item__remove-message {
   @extend .list-item__copy-message;
   left: -1.7rem;
+}
+
+.list_divider_1 {
+  @media (min-width: $desktop-breakpoint) {
+    width: 40%;
+  }
+}
+
+.list_divider_2 {
+  @media (min-width: $desktop-breakpoint) {
+    width: 15%;
+  }
+}
+
+.list_divider_3 {
+  @media (min-width: $desktop-breakpoint) {
+    width: 38%;
+  }
+}
+
+.list_divider_4 {
+  @media (min-width: $desktop-breakpoint) {
+    width: 5%;
+  }
+}
+
+.list_divider_5 {
+  @media (min-width: $desktop-breakpoint) {
+    width: 2%;
+  }
 }

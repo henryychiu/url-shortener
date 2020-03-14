@@ -29,15 +29,15 @@ const UrlListItem = ({ _id, longUrl, shortUrl, createdAt, clicks, copiedId, auth
 
   return (
     <div className="list-item">
-      <div style={{ width: "40%" }}>
+      <div className="list_divider_1">
         <a style={{ textDecoration: "none" }} href={longUrl} target="_blank" rel="noopener noreferrer">
           <div className="list-item__link">{longUrl}</div>
         </a>
       </div>
-      <div style={{ width: "15%" }}>
+      <div className="list_divider_2">
         <div className="list-item__text">{moment(createdAt).format('MMM Do, YYYY')}</div>
       </div>
-      <div style={{ width: "38%" }} className="list-item__text-container">
+      <div className="list-item__text-container list_divider_3">
         <a style={{ textDecoration: "none" }} href={shortUrl} target="_blank" rel="noopener noreferrer">
           <div id={id} className="list-item__link">{shortUrl}</div>
         </a>
@@ -54,10 +54,10 @@ const UrlListItem = ({ _id, longUrl, shortUrl, createdAt, clicks, copiedId, auth
           }
         </div>
       </div>
-      <div style={{ width: "5%" }}>
-        <div className="list-item__statistic">{clicks}</div>
+      <div className="list_divider_4">
+        <div className="list-item__statistic"><span className="show-for-mobile">Clicks: </span>{clicks}</div>
       </div>
-      <div style={{ width: "2%" }}>
+      <div className="list_divider_5">
         <div className="list-item__button-container">
           <button className="list-item__remove-button" onClick={removeItem}>
             <svg height="14pt" viewBox="0 0 512 512" width="14pt" xmlns="http://www.w3.org/2000/svg"><path d="m256 512c-141.160156 0-256-114.839844-256-256s114.839844-256 256-256 256 114.839844 256 256-114.839844 256-256 256zm0-475.429688c-120.992188 0-219.429688 98.4375-219.429688 219.429688s98.4375 219.429688 219.429688 219.429688 219.429688-98.4375 219.429688-219.429688-98.4375-219.429688-219.429688-219.429688zm0 0" /><path d="m347.429688 365.714844c-4.679688 0-9.359376-1.785156-12.929688-5.359375l-182.855469-182.855469c-7.144531-7.144531-7.144531-18.714844 0-25.855469 7.140625-7.140625 18.714844-7.144531 25.855469 0l182.855469 182.855469c7.144531 7.144531 7.144531 18.714844 0 25.855469-3.570313 3.574219-8.246094 5.359375-12.925781 5.359375zm0 0" /><path d="m164.570312 365.714844c-4.679687 0-9.355468-1.785156-12.925781-5.359375-7.144531-7.140625-7.144531-18.714844 0-25.855469l182.855469-182.855469c7.144531-7.144531 18.714844-7.144531 25.855469 0 7.140625 7.140625 7.144531 18.714844 0 25.855469l-182.855469 182.855469c-3.570312 3.574219-8.25 5.359375-12.929688 5.359375zm0 0" /></svg>

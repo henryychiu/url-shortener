@@ -5,11 +5,12 @@ import UrlListItem from './UrlListItem';
 const UrlList = (props) => (
   <div className="content-container">
     <div className="list-header">
-      <div style={{ width: "40%" }}>Original URL</div>
-      <div style={{ width: "15%" }}>Created</div>
-      <div style={{ width: "38%" }}>Short URL</div>
-      <div style={{ width: "5%" }}>Clicks</div>
-      <div style={{ width: "2%" }}></div>
+      <div className="show-for-mobile">URLs</div>
+      <div className="list_divider_1 show-for-desktop">Original URL</div>
+      <div className="list_divider_2 show-for-desktop">Created</div>
+      <div className="list_divider_3 show-for-desktop">Short URL</div>
+      <div className="list_divider_4 show-for-desktop">Clicks</div>
+      <div className="list_divider_5 show-for-desktop"></div>
     </div>
     <div className="list-body">
       {
