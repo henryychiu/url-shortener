@@ -20,7 +20,7 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="header__content">
-          <div className="header__title">henry<span>URL</span></div>
+          <div className="header__title"><span>Henry</span>URL</div>
           {this.renderContent()}
         </div>
       </header>

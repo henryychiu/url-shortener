@@ -6,13 +6,15 @@
 }
 
 .header__title {
-  color: $dark-blue;
+  color: $grey;
   font-size: $font-size-large;
+  font-weight: 300;
   text-decoration: none;
   margin: 0;
   span {
-    color: $grey;
-    font-weight: 300;
+    color: $dark-blue;
+    font-weight: 600;
+    letter-spacing: .05rem;
   }
 }
 

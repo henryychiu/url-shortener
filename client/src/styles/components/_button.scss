@@ -7,12 +7,16 @@
   color: $blue;
   font-size: $font-size-large;
   line-height: 1;
+  margin-top: $s-size;
   outline: none;
   padding: $s-size;
   text-decoration: none;
   transition: background .3s ease;
   &:hover {
     background: $off-white;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    margin: 0;
   }
 }
 

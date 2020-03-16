@@ -65,7 +65,9 @@ class ShortenerForm extends Component {
               value={this.state.longUrl}
               onChange={this.handleChange}
             />
-            <input type="submit" value="SHORTEN URL" className="button" />
+            <div>
+              <input type="submit" value="SHORTEN URL" className="button" />
+            </div>
           </form>
         </div>
         <ShortenerModal
