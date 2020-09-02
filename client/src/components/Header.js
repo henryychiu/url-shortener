@@ -20,7 +20,10 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="header__content">
-          <div className="header__title"><span>Henry</span>URL</div>
+          <div className="header__title-content">
+            <img src="/images/HenryURL.png" alt="logo" width="22" height="22" />
+            <div className="header__title">URL Shortener</div>
+          </div>
           {this.renderContent()}
         </div>
       </header>
