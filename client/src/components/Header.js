@@ -21,7 +21,7 @@ class Header extends Component {
       <header className="header">
         <div className="header__content">
           <div className="header__title-content">
-            <img src="/images/HenryURL.png" alt="logo" width="22" height="22" />
+            <img className="header__image" src="/images/HenryURL.png" alt=""/>
             <div className="header__title">URL Shortener</div>
           </div>
           {this.renderContent()}
