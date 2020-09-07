@@ -1,3 +1,3 @@
-# url-shortener
-URL shortener and tracker
-https://henryurl.herokuapp.com/
+# HenryURL
+A clone of Google's discontinued URL shortening/tracking service.  
+https://henryurl.herokuapp.com
